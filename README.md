@@ -9,6 +9,8 @@
 | Icons    | [Plasma], breeze-dark [GTK2/3] |
 | Theme    | [Plasma], Breeze [GTK2/3]      |
 | Editor   | VSCode/Neovim                  |
+| Browser  | Google Chrome                  |
+| Music    | Spotify                        |
 
 
 # useful download links
