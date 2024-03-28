@@ -1,17 +1,6 @@
-# info
-| Distro   | Arch                           |
-|----------|--------------------------------|
-| DE       | KDE Plasma                     |
-| WM       | kwin                           |
-| Terminal | konsole                        |
-| Shell    | bash                           |
-| WM Theme | Sierra Breeze                  |
-| Icons    | [Plasma], breeze-dark [GTK2/3] |
-| Theme    | [Plasma], Breeze [GTK2/3]      |
-| Editor   | VSCode/Neovim                  |
-| Browser  | Google Chrome                  |
-| Music    | Spotify                        |
+# Info
+This repository contains the main config files used for my setups, with included installation scripts  
 
-
-# useful download links
-* [sierra breeze](https://aur.archlinux.org/packages/sierrabreeze-kwin-decoration-git)
+# Setups
+* [Hyprland](https://github.com/FireStreaker2/dotfiles/tree/main/hyprland)
+* [KDE](https://github.com/FireStreaker2/dotfiles/tree/main/kde)
