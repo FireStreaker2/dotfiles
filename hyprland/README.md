@@ -10,6 +10,14 @@
 | Bar      | Waybar                         |
 | Discord  | Vencord                        |
 
+# Installation
+```bash
+$ git clone https://github.com/FireStreaker2/dotfiles
+$ cd dotfiles/hyprland
+$ chmod +x install.sh
+$ ./install.sh
+```
+
 # Credits
 My dotfiles have been heavily inspired by these, and some are directly modified versions of the original  
 
