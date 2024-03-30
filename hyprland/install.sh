@@ -20,7 +20,8 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     swappy grim slurp pamixer brightnessctl gvfs \
     bluez bluez-utils neofetch nvim swaync \
     xdg-desktop-portal-hyprland sddm blueman \
-    nm-connection-editor
+    nm-connection-editor wl-clipboard swaybg \
+    swayosd-git
 
   yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-desktop-portal-kde
 
@@ -46,6 +47,12 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
 
   chmod +x ~/.config/hypr/xdg-portal-hyprland
   chmod +x ~/.config/waybar/mediaplayer.py
+fi
+
+read -n1 -rep "Would you like to change your default shell to fish? (y,n)" SHL
+if [[ $SHL == "Y" || $SHL == "y" ]]; then
+  chsh --shell=/usr/bin/fish $USER
+  echo -e "Succesfully changed shell! Note that you may have to reboot in order for changes to apply.\n"
 fi
 
 echo -e "Installation has succesfully finished.\n"
