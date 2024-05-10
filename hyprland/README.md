@@ -16,6 +16,9 @@
 ![apps](src/3.png)  
 ![spotify](src/4.png)  
 ![vscode](src/5.png)  
+![widgets](src/6.png)  
+![hyprlock](src/7.png)  
+![wlogout](src/8.png)  
 
 # Installation
 ```bash
