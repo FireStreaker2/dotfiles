@@ -18,7 +18,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     ttf-jetbrains-mono-nerd noto-fonts-emoji \
     polkit-gnome python-requests starship \
     swappy grim slurp pamixer brightnessctl gvfs \
-    bluez bluez-utils neofetch nvim swaync \
+    bluez bluez-utils neofetch neovim swaync \
     xdg-desktop-portal-hyprland sddm blueman \
     nm-connection-editor wl-clipboard swaybg \
     swayosd-git
@@ -47,6 +47,15 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
 
   chmod +x ~/.config/hypr/xdg-portal-hyprland
   chmod +x ~/.config/waybar/mediaplayer.py
+fi
+
+read -n1 -rep "Would you like to install the Gura SDDM theme? (y,n)" SDDM
+if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
+  git clone https://github.com/FireStreaker2/Gura-SDDM.git ~/Gura-SDDM
+  mv ~/Gura-SDDM /usr/share/sddm/themes/
+  sed -i "s/^Current=.*$/Current=gura-sddm/" /etc/sddm.conf
+
+  echo -e "Succesfully set the SDDM theme!\n"
 fi
 
 read -n1 -rep "Would you like to change your default shell to fish? (y,n)" SHL

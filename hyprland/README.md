@@ -19,6 +19,7 @@
 ![widgets](src/6.png)  
 ![hyprlock](src/7.png)  
 ![wlogout](src/8.png)  
+![sddm](https://raw.githubusercontent.com/FireStreaker2/Gura-SDDM/main/preview.png)  
 
 # Installation
 ```bash
@@ -44,3 +45,6 @@ My dotfiles have been heavily inspired by these, and some are directly modified 
 * [gura.png](https://twitter.com/kokoshira_0512/status/1512649948055347200)
 * [wallpaper2.png](https://www.pixiv.net/en/artworks/94886012)
 * [wallpaper3.png](https://danbooru.donmai.us/posts/5448225)
+
+## Other
+* [Gura SDDM](https://github.com/FireStreaker2/Gura-SDDM)
