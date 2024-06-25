@@ -21,7 +21,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     bluez bluez-utils neofetch neovim swaync \
     xdg-desktop-portal-hyprland sddm blueman \
     nm-connection-editor wl-clipboard swaybg \
-    swayosd-git
+    swayosd-git bc
 
   yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-desktop-portal-kde
 
