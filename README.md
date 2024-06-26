@@ -1,6 +1,7 @@
 # Info
-| Distro   | Arch                           |
+| Category | Application                    |
 |----------|--------------------------------|
+| Distro   | Arch
 | WM       | Hyprland                       |
 | Terminal | kitty                          |
 | Shell    | fish                           |
@@ -24,10 +25,16 @@
 # Installation
 ```bash
 $ git clone https://github.com/FireStreaker2/dotfiles
-$ cd dotfiles/hyprland
+$ cd dotfiles
 $ chmod +x install.sh
 $ ./install.sh
 ```
+
+## Note
+The screen resolution I use is 2240x1400, which means if you use a different one some things might be in the wrong position. Feel free to fork this repository and make your own edits!
+
+# Keybinds/Shortcuts
+For a list of all the keybinds, please refer to my [hyprland.conf](https://github.com/FireStreaker2/dotfiles/blob/main/hypr/hyprland.conf) file. For waybar shortcuts, check out my waybar [config](https://github.com/FireStreaker2/dotfiles/blob/main/waybar/config)
 
 # Credits
 ## Dotfiles

@@ -43,17 +43,8 @@
 			"10": "十"
 		},
 		"persistent-workspaces": {
-			"1": [],
-			"2": [],
-			"3": [],
-			"4": [],
-			"5": [],
-			"6": [],
-			"7": [],
-			"8": [],
-			"9": [],
-			"10": []
-		}
+		  "*": 10			
+    }
 	},
 	"cpu": {
 		"interval": 10,
@@ -92,7 +83,7 @@
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
-			"headset": "🎧",
+			"headset": "",
 			"phone": "",
 			"portable": "",
 			"car": "",
@@ -103,7 +94,9 @@
 			]
 		},
 		"on-scroll-up": "amixer -D pulse sset Capture 1%+",
-		"on-scroll-down": "amixer -D pulse sset Capture 1%-"
+		"on-scroll-down": "amixer -D pulse sset Capture 1%-",
+    "on-click": "amixer -q -D pulse sset Master toggle",
+    "on-click-right": "amixer -D pulse sset Capture toggle"
 	},
 	"network": {
 		"format": "{icon}",
@@ -112,18 +105,16 @@
 		"format-wifi": "{icon} ({signalStrength}%)",
 		"format-icons": {
 			"wifi": [
-				"睊",
-				"直",
 				""
 			],
 			"ethernet": [
 				""
 			],
 			"disconnected": [
-				""
+				""
 			]
 		},
-		"on-click": "echo 1",
+		"on-click": "networkmanager_dmenu",
 		"tooltip-format": "Network: {essid}"
 	},
 	"battery": {
@@ -132,7 +123,7 @@
 			"critical": 15
 		},
 		"format": "{icon} {capacity}%",
-		"format-charging": "⚡ {capacity}%",
+		"format-charging": " {capacity}%",
 		"format-plugged": "  {capacity}%",
 		"format-icons": [
 			"",

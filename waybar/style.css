@@ -36,13 +36,17 @@ tooltip {
 	padding: 0 4px;
 }
 
+#workspaces button:hover {
+	border: 1px solid #139cdb;
+}
+
 #workspaces button.active {
-	border-color: #139cdb;
+	border: 1px solid #139cdb;
 }
 
 #workspaces button.empty {
 	background-color: #9fcfff;
-  border-radius: 0px;
+	border-radius: 0px;
 }
 
 #workspaces button.urgent * {
@@ -69,8 +73,7 @@ tooltip {
 #network,
 #pulseaudio,
 #backlight,
-#clock,
-#temperature {
+#clock {
 	margin: 4px 2px;
 	padding: 0 6px;
 	border-radius: 20px;
