@@ -1,3 +1,6 @@
+# Dotfiles
+The repository containing the dotfiles for my [Hyprland](https://hyprland.org/) daily driver.
+
 # Info
 | Category | Application                    |
 |----------|--------------------------------|
@@ -50,6 +53,7 @@ My dotfiles have been heavily inspired by these, and some are directly modified 
 
 ## Images
 * [gura.png](https://twitter.com/kokoshira_0512/status/1512649948055347200)
+* [wallpaper1.png](https://www.pixiv.net/en/artworks/87135236)
 * [wallpaper2.png](https://www.pixiv.net/en/artworks/94886012)
 * [wallpaper3.png](https://danbooru.donmai.us/posts/5448225)
 
