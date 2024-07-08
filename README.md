@@ -1,5 +1,5 @@
 # Dotfiles
-The repository containing the dotfiles for my [Hyprland](https://hyprland.org/) daily driver.
+The repository containing the dotfiles for my [Hyprland](https://hyprland.org/) daily driver, featuring a [Gawr Gura](https://youtube.com/@gawrgura) theme.
 
 # Info
 | Category | Application                    |
@@ -25,6 +25,8 @@ The repository containing the dotfiles for my [Hyprland](https://hyprland.org/) 
 ![wlogout](src/8.png)  
 ![sddm](https://raw.githubusercontent.com/FireStreaker2/Gura-SDDM/main/preview.png)  
 
+> A video can be found [here](https://www.youtube.com/watch?v=b3MoRgazqk4)
+
 # Installation
 ```bash
 $ git clone https://github.com/FireStreaker2/dotfiles
@@ -33,11 +35,13 @@ $ chmod +x install.sh
 $ ./install.sh
 ```
 
+> Note that this script is only for Arch based distributions, but feel free to modify it yourself to fit your own setup!
+
 ## Note
 The screen resolution I use is 2240x1400, which means if you use a different one some things might be in the wrong position. Feel free to fork this repository and make your own edits!
 
 # Keybinds/Shortcuts
-For a list of all the keybinds, please refer to my [hyprland.conf](https://github.com/FireStreaker2/dotfiles/blob/main/hypr/hyprland.conf) file. For waybar shortcuts, check out my waybar [config](https://github.com/FireStreaker2/dotfiles/blob/main/waybar/config)
+For a list of all the keybinds, please refer to my [hyprland.conf](https://github.com/FireStreaker2/dotfiles/blob/main/hypr/hyprland.conf) file. For waybar shortcuts, check out my waybar [config](https://github.com/FireStreaker2/dotfiles/blob/main/waybar/config).
 
 # Credits
 ## Dotfiles
@@ -59,3 +63,4 @@ My dotfiles have been heavily inspired by these, and some are directly modified 
 
 ## Other
 * [Gura SDDM](https://github.com/FireStreaker2/Gura-SDDM)
+* [BlueGTK](https://github.com/FireStreaker2/BlueGTK)

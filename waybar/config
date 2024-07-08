@@ -57,8 +57,8 @@
 		"format": "{}",
 		"return-type": "json",
 		"on-click": "playerctl play-pause",
-		"on-scroll-up": "playerctl next",
-		"on-scroll-down": "playerctl previous"
+		"on-scroll-up": "playerctl previous",
+		"on-scroll-down": "playerctl next"
 	},
 	"tray": {
 		"icon-size": 15
@@ -153,8 +153,8 @@
 			"on-click-right": "mode",
 			"on-click-forward": "tz_up",
 			"on-click-backward": "tz_down",
-			"on-scroll-up": "shift_up",
-			"on-scroll-down": "shift_down"
+			"on-scroll-up": "shift_down",
+			"on-scroll-down": "shift_up"
 		}
 	},
 	"custom/swaync": {
