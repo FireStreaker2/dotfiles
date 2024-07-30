@@ -23,7 +23,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     nm-connection-editor wl-clipboard swaybg \
     swayosd-git network-manager-applet wofi-emoji \
     alsa-utils networkmanager-dmenu-git \
-    ttf-font-awesome
+    ttf-font-awesome adwaita-icon-theme
 
   yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-desktop-portal-kde
 
