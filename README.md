@@ -75,6 +75,7 @@ My dotfiles have been heavily inspired by these, and some are directly modified 
 
 - [Gura SDDM](https://github.com/FireStreaker2/Gura-SDDM)
 - [BlueGTK](https://github.com/FireStreaker2/BlueGTK)
+- [Spotify Adblock](https://github.com/rxri/spicetify-extensions/tree/main/adblock)
 
 # Contributing
 

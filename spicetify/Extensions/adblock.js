@@ -1,4 +1,7 @@
 "use strict";
+/**
+ * @author ririxi
+ */
 const loadWebpack = () => {
 	try {
 		const require = window.webpackChunkclient_web.push([
@@ -23,9 +26,18 @@ const loadWebpack = () => {
 		return { cache: [], functionModules: [] };
 	}
 };
-const getSettingsClient = (cache) => {
+const getSettingsClient = (cache, functionModules = [], transport = {}) => {
 	try {
-		return cache.find((m) => m.settingsClient).settingsClient;
+		const settingsClient = cache.find((m) => m?.settingsClient)?.settingsClient;
+		if (!settingsClient) {
+			const settings = functionModules.find(
+				(m) =>
+					m?.SERVICE_ID === "spotify.ads.esperanto.settings.proto.Settings" ||
+					m?.SERVICE_ID === "spotify.ads.esperanto.proto.Settings"
+			);
+			return new settings(transport);
+		}
+		return settingsClient;
 	} catch (error) {
 		console.error("adblockify: Failed to get ads settings client", error);
 		return null;
@@ -54,30 +66,32 @@ const retryCounter = (slotId, action) => {
 (async function adblockify() {
 	// @ts-expect-error: Events are not defined in types
 	await new Promise((res) => Spicetify.Events.platformLoaded.on(res));
-	if (!window.webpackChunkclient_web) {
-		setTimeout(adblockify, 50);
+	// @ts-expect-error: Events are not defined in types
+	await new Promise((res) => Spicetify.Events.webpackLoaded.on(res));
+	const webpackCache = loadWebpack();
+	const { Platform, Locale } = Spicetify;
+	const { AdManagers } = Platform;
+	if (!AdManagers?.audio || Object.keys(AdManagers).length === 0) {
+		setTimeout(adblockify, 100);
 		return;
 	}
-	const webpackCache = loadWebpack();
-	// @ts-expect-error: expFeatureOverride is not defined in types
-	const { CosmosAsync, Platform, expFeatureOverride, Locale } = Spicetify;
-	const { AdManagers } = Platform;
 	const { audio } = AdManagers;
 	const { UserAPI } = Platform;
 	const productState =
 		UserAPI._product_state ||
 		UserAPI._product_state_service ||
 		Platform?.ProductStateAPI?.productStateApi;
-	if (!CosmosAsync) {
+	if (!Spicetify?.CosmosAsync) {
 		setTimeout(adblockify, 100);
 		return;
 	}
+	const { CosmosAsync } = Spicetify;
 	const slots = await CosmosAsync.get("sp://ads/v1/slots");
 	const hideAdLikeElements = () => {
 		const css = document.createElement("style");
 		const upgradeText = Locale.get("upgrade.tooltip.title");
 		css.className = "adblockify";
-		css.innerHTML = `.nHCJskDZVlmDhNNS9Ixv, .utUDWsORU96S7boXm2Aq, .cpBP3znf6dhHLA2dywjy, .G7JYBeU1c2QawLyFs5VK, .vYl1kgf1_R18FCmHgdw2, .vZkc6VwrFz0EjVBuHGmx, .iVAZDcTm1XGjxwKlQisz, ._I_1HMbDnNlNAaViEnbp, .xXj7eFQ8SoDKYXy6L3E1, .F68SsPm8lZFktQ1lWsQz, .MnW5SczTcbdFHxLZ_Z8j, .WiPggcPDzbwGxoxwLWFf, .ReyA3uE3K7oEz7PTTnAn, .x8e0kqJPS0bM4dVK7ESH, .gZ2Nla3mdRREDCwybK6X, .SChMe0Tert7lmc5jqH01, .AwF4EfqLOIJ2xO7CjHoX, .UlkNeRDFoia4UDWtrOr4, .k_RKSQxa2u5_6KmcOoSw, ._mWmycP_WIvMNQdKoAFb, .O3UuqEx6ibrxyOJIdpdg, .akCwgJVf4B4ep6KYwrk5, .bIA4qeTh_LSwQJuVxDzl, .ajr9pah2nj_5cXrAofU_, .gvn0k6QI7Yl_A0u46hKn, .obTnuSx7ZKIIY1_fwJhe, .IiLMLyxs074DwmEH4x5b, .RJjM91y1EBycwhT_wH59, .mxn5B5ceO2ksvMlI1bYz, .l8wtkGVi89_AsA3nXDSR, .Th1XPPdXMnxNCDrYsnwb, .SJMBltbXfqUiByDAkUN_, .Nayn_JfAUsSO0EFapLuY, .YqlFpeC9yMVhGmd84Gdo, .HksuyUyj1n3aTnB4nHLd, .DT8FJnRKoRVWo77CPQbQ, .main-leaderboardComponent-container, .sponsor-container, a.link-subtle.main-navBar-navBarLink.GKnnhbExo0U9l7Jz2rdc, button[title="${upgradeText}"], button[aria-label="${upgradeText}"], .main-topBar-UpgradeButton, .main-contextMenu-menuItem a[href^="https://www.spotify.com/premium/"], div[data-testid*="hpto"] {display: none !important;}`;
+		css.innerHTML = `.nHCJskDZVlmDhNNS9Ixv, .utUDWsORU96S7boXm2Aq, .cpBP3znf6dhHLA2dywjy, .G7JYBeU1c2QawLyFs5VK, .vYl1kgf1_R18FCmHgdw2, .vZkc6VwrFz0EjVBuHGmx, .iVAZDcTm1XGjxwKlQisz, ._I_1HMbDnNlNAaViEnbp, .xXj7eFQ8SoDKYXy6L3E1, .F68SsPm8lZFktQ1lWsQz, .MnW5SczTcbdFHxLZ_Z8j, .WiPggcPDzbwGxoxwLWFf, .ReyA3uE3K7oEz7PTTnAn, .x8e0kqJPS0bM4dVK7ESH, .gZ2Nla3mdRREDCwybK6X, .SChMe0Tert7lmc5jqH01, .AwF4EfqLOIJ2xO7CjHoX, .UlkNeRDFoia4UDWtrOr4, .k_RKSQxa2u5_6KmcOoSw, ._mWmycP_WIvMNQdKoAFb, .O3UuqEx6ibrxyOJIdpdg, .akCwgJVf4B4ep6KYwrk5, .bIA4qeTh_LSwQJuVxDzl, .ajr9pah2nj_5cXrAofU_, .gvn0k6QI7Yl_A0u46hKn, .obTnuSx7ZKIIY1_fwJhe, .IiLMLyxs074DwmEH4x5b, .RJjM91y1EBycwhT_wH59, .mxn5B5ceO2ksvMlI1bYz, .l8wtkGVi89_AsA3nXDSR, .Th1XPPdXMnxNCDrYsnwb, .SJMBltbXfqUiByDAkUN_, .Nayn_JfAUsSO0EFapLuY, .YqlFpeC9yMVhGmd84Gdo, .HksuyUyj1n3aTnB4nHLd, .DT8FJnRKoRVWo77CPQbQ, ._Cq69xKZBtHaaeMZXIdk, .main-leaderboardComponent-container, .sponsor-container, a.link-subtle.main-navBar-navBarLink.GKnnhbExo0U9l7Jz2rdc, button[title="${upgradeText}"], button[aria-label="${upgradeText}"], .main-topBar-UpgradeButton, .main-contextMenu-menuItem a[href^="https://www.spotify.com/premium/"], div[data-testid*="hpto"] {display: none !important;}`;
 		document.head.appendChild(css);
 	};
 	const disableAds = async () => {
@@ -96,16 +110,19 @@ const retryCounter = (slotId, action) => {
 	};
 	const configureAdManagers = async () => {
 		try {
-			const { billboard, leaderboard, inStreamApi, sponsoredPlaylist } =
-				AdManagers;
-			audio.audioApi.cosmosConnector.increaseStreamTime(-100000000000);
-			billboard.billboardApi.cosmosConnector.increaseStreamTime(-100000000000);
+			const { billboard, leaderboard, sponsoredPlaylist } = AdManagers;
+			await CosmosAsync.post("sp://ads/v1/testing/playtime", {
+				value: -100000000000,
+			});
 			await audio.disable();
 			audio.isNewAdsNpvEnabled = false;
 			await billboard.disable();
 			await leaderboard.disableLeaderboard();
-			await inStreamApi.disable();
 			await sponsoredPlaylist.disable();
+			if (AdManagers?.inStreamApi) {
+				const { inStreamApi } = AdManagers;
+				await inStreamApi.disable();
+			}
 			if (AdManagers?.vto) {
 				const { vto } = AdManagers;
 				await vto.manager.disable();
@@ -122,13 +139,16 @@ const retryCounter = (slotId, action) => {
 	const bindToSlots = async () => {
 		for (const slot of slots) {
 			subToSlot(slot.slot_id);
-			handleAdSlot({ adSlotEvent: { slotId: slot.slot_id } });
+			setTimeout(
+				() => handleAdSlot({ adSlotEvent: { slotId: slot.slot_id } }),
+				50
+			);
 		}
 	};
 	const handleAdSlot = (data) => {
 		const slotId = data?.adSlotEvent?.slotId;
 		try {
-			const adsCoreConnector = audio.inStreamApi.adsCoreConnector;
+			const adsCoreConnector = audio?.inStreamApi?.adsCoreConnector;
 			if (typeof adsCoreConnector?.clearSlot === "function")
 				adsCoreConnector.clearSlot(slotId);
 			const slotsClient = getSlotsClient(
@@ -156,8 +176,16 @@ const retryCounter = (slotId, action) => {
 	};
 	const updateSlotSettings = async (slotId) => {
 		try {
-			const settingsClient = getSettingsClient(webpackCache.cache);
+			const settingsClient = getSettingsClient(
+				webpackCache.cache,
+				webpackCache.functionModules,
+				productState.transport
+			);
 			if (!settingsClient) return;
+			await settingsClient.updateAdServerEndpoint({
+				slotIds: [slotId],
+				url: "http://localhost/no/thanks",
+			});
 			await settingsClient.updateStreamTimeInterval({
 				slotId,
 				timeInterval: "0",
@@ -215,15 +243,42 @@ const retryCounter = (slotId, action) => {
 			const expFeatures = JSON.parse(
 				localStorage.getItem("spicetify-exp-features") || "{}"
 			);
-			const hptoEsperanto = expFeatures.enableEsperantoMigration?.value;
-			const inAppMessages = expFeatures.enableInAppMessaging?.value;
-			const upgradeCTA = expFeatures.hideUpgradeCTA?.value;
-			if (!hptoEsperanto)
-				expFeatureOverride({ name: "enableEsperantoMigration", default: true });
-			if (inAppMessages)
-				expFeatureOverride({ name: "enableInAppMessaging", default: false });
-			if (!upgradeCTA)
-				expFeatureOverride({ name: "hideUpgradeCTA", default: true });
+			if (typeof expFeatures?.enableEsperantoMigration?.value !== "undefined")
+				expFeatures.enableEsperantoMigration.value = true;
+			if (typeof expFeatures?.enableInAppMessaging?.value !== "undefined")
+				expFeatures.enableInAppMessaging.value = false;
+			if (typeof expFeatures?.hideUpgradeCTA?.value !== "undefined")
+				expFeatures.hideUpgradeCTA.value = true;
+			if (
+				typeof expFeatures?.enablePremiumUserForMiniPlayer?.value !==
+				"undefined"
+			)
+				expFeatures.enablePremiumUserForMiniPlayer.value = true;
+			localStorage.setItem(
+				"spicetify-exp-features",
+				JSON.stringify(expFeatures)
+			);
+			const overrides = {
+				enableEsperantoMigration: true,
+				enableInAppMessaging: false,
+				hideUpgradeCTA: true,
+				enablePremiumUserForMiniPlayer: true,
+			};
+			// @ts-expect-error: RemoteConfigResolver is not defined in types
+			if (Spicetify?.RemoteConfigResolver) {
+				// @ts-expect-error: createInternalMap is not defined in types
+				const map = Spicetify.createInternalMap(overrides);
+				// @ts-expect-error: RemoteConfigResolver is not defined in types
+				Spicetify.RemoteConfigResolver.value.setOverrides(map);
+			} else if (Spicetify.Platform?.RemoteConfigDebugAPI) {
+				const RemoteConfigDebugAPI = Spicetify.Platform.RemoteConfigDebugAPI;
+				for (const [key, value] of Object.entries(overrides)) {
+					await RemoteConfigDebugAPI.setOverride(
+						{ source: "web", type: "boolean", name: key },
+						value
+					);
+				}
+			}
 		} catch (error) {
 			console.error(
 				"adblockify: Failed inside `enableExperimentalFeatures` function\n",
@@ -231,7 +286,23 @@ const retryCounter = (slotId, action) => {
 			);
 		}
 	};
-	enableExperimentalFeatures();
+	// const checkSpotifyVersion = (): boolean => {
+	// 	const version = Spicetify.Platform.version.split(".").map((i: string) => Number.parseInt(i));
+	// 	if (version[0] === 1 && version[1] >= 2 && version[2] >= 56) {
+	// 		console.error("adblockify: Unsupported version of spotify. Not launching further");
+	// 		// @ts-expect-error: Snackbar is not defined in types
+	// 		Spicetify.Snackbar.enqueueSnackbar(
+	// 			"adblockify: Spotify version `1.2.56` and higher are NOT supported at this moment. Spicetify does not support these at this moment either. Please downgrade to `1.2.55` to use adblockify and block Spotify updates",
+	// 			{
+	// 				variant: "error",
+	// 				autoHideDuration: 10000,
+	// 			}
+	// 		);
+	// 		return true;
+	// 	}
+	// 	return false;
+	// };
+	// if (checkSpotifyVersion()) return;
 	bindToSlots();
 	hideAdLikeElements();
 	// to enable one day if disabling `enableInAppMessages` exp feature doesn't work
@@ -240,6 +311,8 @@ const retryCounter = (slotId, action) => {
 		{ keys: ["ads", "catalogue", "product", "type"] },
 		() => configureAdManagers()
 	);
+	enableExperimentalFeatures();
+	setTimeout(enableExperimentalFeatures, 3 * 1000);
 	// Update slot settings after 5 seconds... idk why, don't ask me why, it just works
 	setTimeout(intervalUpdateSlotSettings, 5 * 1000);
 })();
