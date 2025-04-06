@@ -1,6 +1,6 @@
 # Dotfiles
 
-The repository containing the dotfiles for my [Hyprland](https://hyprland.org/) daily driver, featuring a [Gawr Gura](https://youtube.com/@gawrgura) theme.
+Dotfiles for my [Nanashi Mumei](https://www.youtube.com/@nanashimumei) rice! Similar to my [Gura rice](https://github.com/FireStreaker2/dotfiles/tree/main) but with different colorscheme and animations!
 
 # Info
 
@@ -26,15 +26,12 @@ The repository containing the dotfiles for my [Hyprland](https://hyprland.org/) 
 ![vscode](src/5.png)  
 ![widgets](src/6.png)  
 ![hyprlock](src/7.png)  
-![wlogout](src/8.png)  
-![sddm](https://raw.githubusercontent.com/FireStreaker2/Gura-SDDM/main/preview.png)
-
-> A video can be found [here](https://www.youtube.com/watch?v=b3MoRgazqk4)
+![wlogout](src/8.png)
 
 # Installation
 
 ```bash
-$ git clone https://github.com/FireStreaker2/dotfiles
+$ git clone -b mumei --single-branch https://github.com/FireStreaker2/dotfiles
 $ cd dotfiles
 $ chmod +x install.sh
 $ ./install.sh
@@ -48,7 +45,7 @@ The screen resolution I use is 2240x1400, which means if you use a different one
 
 # Keybinds/Shortcuts
 
-For a list of all the keybinds, please refer to my [hyprland.conf](https://github.com/FireStreaker2/dotfiles/blob/main/hypr/hyprland.conf) file. For waybar shortcuts, check out my waybar [config](https://github.com/FireStreaker2/dotfiles/blob/main/waybar/config).
+For a list of all the keybinds, please refer to my [hyprland.conf](https://github.com/FireStreaker2/dotfiles/blob/mumei/hypr/hyprland.conf) file. For waybar shortcuts, check out my waybar [config](https://github.com/FireStreaker2/dotfiles/blob/mumei/waybar/config).
 
 # Credits
 
@@ -66,16 +63,10 @@ My dotfiles have been heavily inspired by these, and some are directly modified 
 
 ## Images
 
-- [gura.png](https://twitter.com/shouu_kyun/status/1586041364457746432)
-- [wallpaper1.png](https://www.pixiv.net/en/artworks/87135236)
-- [wallpaper2.png](https://www.pixiv.net/en/artworks/94886012)
-- [wallpaper3.png](https://danbooru.donmai.us/posts/5448225)
-
-## Other
-
-- [Gura SDDM](https://github.com/FireStreaker2/Gura-SDDM)
-- [BlueGTK](https://github.com/FireStreaker2/BlueGTK)
-- [Spotify Adblock](https://github.com/rxri/spicetify-extensions/tree/main/adblock)
+- [bg.mkv](https://www.youtube.com/watch?v=QEeqLsOBWBE)
+- [moom-wallpaper.png](https://x.com/xdeyuix/status/1907544936230302127)
+- [moom.png](https://www.pixiv.net/en/artworks/120688020)
+- [pfp.png](https://x.com/koahri1/status/1750304330849161680)
 
 # Contributing
 
@@ -83,4 +74,4 @@ Since these are my personal dotfiles, I won't be accepting any contributions reg
 
 # License
 
-[MIT](https://github.com/FireStreaker2/dotfiles/blob/main/LICENSE)
+[MIT](https://github.com/FireStreaker2/dotfiles/blob/mumei/LICENSE)

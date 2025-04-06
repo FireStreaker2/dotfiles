@@ -24,7 +24,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     swayosd-git network-manager-applet wofi-emoji \
     alsa-utils networkmanager-dmenu-git \
     ttf-font-awesome adwaita-icon-theme \
-    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gtk mpvpaper
 
   yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-kde
 
@@ -36,19 +36,16 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
   cp -R cava ~/.config/
   cp -R fastfetch ~/.config/
   cp -R fish ~/.config/
-  cp -R gtk* ~/.config/
   cp -R hypr ~/.config/
   cp -R kitty ~/.config/
   cp -R neofetch ~/.config/
   cp -R nvim ~/.config/
   cp -R swaync ~/.config/
-  cp -R vis ~/.config/
   cp -R waybar ~/.config/
   cp -R wlogout ~/.config/
   cp -R wofi ~/.config/
 
   cp code-flags.conf ~/.config/
-  cp gtkrc ~/.config/
   cp starship.toml ~/.config/
 
   cp -R Pictures ~/
@@ -60,19 +57,10 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
   chmod +x ~/.config/waybar/mediaplayer.py
 fi
 
-read -n1 -rep "Would you like to install the Gura SDDM theme? (y,n)" SDDM
-if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
-  git clone https://github.com/FireStreaker2/Gura-SDDM.git ~/Gura-SDDM
-  mv ~/Gura-SDDM /usr/share/sddm/themes/
-  sed -i "s/^Current=.*$/Current=gura-sddm/" /etc/sddm.conf
-
-  echo -e "Succesfully set the SDDM theme!\n"
-fi
-
 read -n1 -rep "Would you like to install the main programs I use? (Chrome, Spotify, Discord, VSCode, etc) (y,n)" PRO
 if [[ $PRO == "Y" || $PRO == "y" ]]; then
-  yay -S --noconfirm google-chrome \
-    spotify spicetify-cli discord \
+  yay -S --noconfirm spotify \
+    spicetify-cli discord \
     visual-studio-code-bin
 
   sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
@@ -80,7 +68,10 @@ if [[ $PRO == "Y" || $PRO == "y" ]]; then
   cp -R spicetify ~/.config/spicetify
   cp -R Vencord ~/.config/vencord
 
-  echo -e "Programs have been installed! In order to finish setting them up, please do the following:\nChrome: Upload Gawr+Gura+Blue.zip to chrome://extensions\nSpotify: Run spicetify --help to get started\nVSCode: Download the Winter is Coming theme"
+  curl -o theme.vsix https://raw.githubusercontent.com/FireStreaker2/NanashiMumeiVSCode/refs/heads/main/nanashi-mumei-theme-1.0.0.vsix
+  code --install-extension theme.vsix
+
+  echo -e "Programs have been installed!"
 fi
 
 read -n1 -rep "Would you like to change your default shell to fish? (y,n)" SHL

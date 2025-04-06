@@ -1,0 +1,49 @@
+/**
+ * @name Mumei
+ * @author firestreaker2
+ * @description Simple Nanashi Mumei discord theme
+ * @version 0.1.0
+ */
+
+:root {
+  --user-buttons-color: #b18576;
+  --mention-color: #c17886;
+  --unread-color: #ae7889;
+  --mention-color-bar: #c17886;
+  --mention-color-background: #c178861f;
+  --mention-color-hover: #c1788626;
+  --chat-buttons: #b18576;
+  --spotify-color: #daada4;
+  --online: #b18576;
+  --iddle: #ae7889;
+  --dnd: #9f5f61;
+  --offline: #a49792;
+  --streaming: #b18d9b;
+  --playing: #c17886;
+  --listening: #b18d9b;
+}
+
+.theme-dark, .theme-light {
+  --background-primary: #1c1314;
+  --background-secondary: #291f20;
+  --background-secondary-alt: #4a393a;
+  --background-tertiary: #614847;
+  --background-accent: #b18576;
+  --modal-background: #ae7889;
+  --background-mobile-primary: #4a393a;
+  --background-mobile-secondary: #291f20;
+  --channeltextarea-background: #291f20;
+  --background-message-hover: transparent;
+  --background-modifier-hover: #00000010;
+  --background-modifier-active: #0000001a;
+  --background-modifier-selected: #0000001f;
+  --deprecated-card-bg: #1c131463;
+  --background-floating: #1c1314;
+  --deprecated-quickswitcher-input-background: #1c1314;
+  --elevation-low: none;
+  --scrollbar-auto-thumb: #a49792;
+  --scrollbar-auto-track: #4a393a;
+  --scrollbar-thin-thumb: #b18d9b;
+  --activity-card-background: #291f20;
+  --input-background: #291f20;
+}

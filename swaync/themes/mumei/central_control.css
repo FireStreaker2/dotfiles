@@ -1,0 +1,227 @@
+* {
+	color: #ebd9d1;
+	all: unset;
+	font-size: 14px;
+	font-family: "JetBrainsMono NF";
+	transition: 200ms;
+}
+
+.blank-window {
+	background: transparent;
+}
+
+.control-center {
+	background: rgba(28, 19, 20, 0.55);
+	border-radius: 24px;
+	border: 1px solid #1c1314;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+	margin: 18px;
+	padding: 12px;
+}
+
+.control-center .notification-row .notification-background,
+.control-center .notification-row .notification-background .notification.critical {
+	background-color: #1c1314;
+	border-radius: 16px;
+	margin: 4px 0px;
+	padding: 4px;
+}
+
+.control-center .notification-row .notification-background .notification.critical {
+	color: #9F5F61;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content {
+	margin: 6px;
+	padding: 8px 6px 2px 2px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * {
+	min-height: 3.4em;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
+	background: rgba(28, 19, 20, 0.6);
+	color: #ebd9d1;
+	border-radius: 12px;
+	margin: 6px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+	background: #9F5F61;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
+	background-color: #B18576;
+}
+
+.control-center .notification-row .notification-background .close-button {
+	background: transparent;
+	border-radius: 6px;
+	color: #ebd9d1;
+	margin: 0px;
+	padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+	background-color: #9F5F61;
+}
+
+.control-center .notification-row .notification-background .close-button:active {
+	background-color: #B18576;
+}
+
+progressbar, progress, trough {
+	border-radius: 12px;
+}
+
+progressbar {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-group {
+	margin: 2px 8px 2px 8px;
+}
+
+.notification-group-headers {
+	font-weight: bold;
+	font-size: 1.25rem;
+	color: #ebd9d1;
+	letter-spacing: 2px;
+}
+
+.notification-group-icon {
+	color: #ebd9d1;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+	background: transparent;
+	color: #ebd9d1;
+	margin: 4px;
+	border-radius: 6px;
+	padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+	background: #9F5F61;
+}
+
+.widget-title {
+	font-size: 1.2em;
+	margin: 6px;
+}
+
+.widget-title button {
+	background: #1c1314;
+	border-radius: 6px;
+	padding: 4px 16px;
+}
+
+.widget-title button:hover {
+	background-color: #9F5F61;
+}
+
+.widget-title button:active {
+	background-color: #B18576;
+}
+
+.widget-dnd {
+	margin: 6px;
+	font-size: 1.2rem;
+}
+
+.widget-dnd > switch {
+	background: #1c1314;
+	font-size: initial;
+	border-radius: 8px;
+	box-shadow: none;
+	padding: 2px;
+}
+
+.widget-dnd > switch:hover {
+	background: #9F5F61;
+}
+
+.widget-dnd > switch:checked {
+	background: #B18576;
+}
+
+.widget-dnd > switch:checked:hover {
+	background: #9F5F61;
+}
+
+.widget-dnd > switch slider {
+	background: #ebd9d1;
+	border-radius: 6px;
+}
+
+.widget-buttons-grid {
+	font-size: x-large;
+	padding: 6px 2px;
+	margin: 6px;
+	border-radius: 12px;
+	background: #1c1314;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+	margin: 4px 10px;
+	padding: 6px 12px;
+	background: transparent;
+	border-radius: 8px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+	background: #9F5F61;
+}
+
+.widget-mpris {
+	background: #1c1314;
+	border-radius: 16px;
+	color: #ebd9d1;
+	margin: 20px 6px;
+}
+
+.widget-mpris-player {
+	background-color: #1c1314;
+	border-radius: 22px;
+	padding: 6px 14px;
+	margin: 6px;
+}
+
+.widget-mpris > box > button {
+	color: #ebd9d1;
+	border-radius: 20px;
+}
+
+.widget-mpris button {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.widget-mpris button:hover {
+	color: #ebd9d1;
+}
+
+.widget-mpris-album-art {
+	border-radius: 16px;
+}
+
+.widget-mpris-title {
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+	font-weight: 500;
+	font-size: 0.8rem;
+}
+
+.widget-volume {
+	background: #1c1314;
+	color: #9F5F61;
+	padding: 4px;
+	margin: 6px;
+	border-radius: 6px;
+}
+

@@ -1,8 +1,8 @@
 window {
 	font-family: "JetBrainsMono NF";
 	font-size: 16pt;
-	color: #fff;
-	background-color: rgba(24, 27, 32, 0.2);
+	color: #ebd9d1;
+	background-color: rgba(28, 19, 20, 0.2);
 }
 
 button {
@@ -25,7 +25,7 @@ button:focus {
 button:hover {
 	background-size: 50%;
 	box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
-	background-color: #163d63;
+	background-color: #4a393a;
 	color: transparent;
 	transition: all 0.4s cubic-bezier(0.55, 0, 0.28, 1.682), box-shadow 1s ease-in;
 }
@@ -64,3 +64,4 @@ button:hover {
 #hibernate:hover {
 	background-image: image(url("./icons/hibernate-hover.png"));
 }
+

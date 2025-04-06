@@ -3,25 +3,25 @@
 	box-shadow: none;
 	font-family: "JetBrainsMono NF";
 	font-size: 12.5px;
-	color: #00a5f2;
+	color: #9b7e74;
 }
 
 #waybar {
 	margin-top: 14px;
-	background: #fff;
-	border-radius: 12px;
-	border: 2px solid #89cff0;
+	background: #291f20;
+	border-radius: 0px;
+	border: 2px solid #785b56;
 }
 
 tooltip {
 	border-radius: 10px;
-	background-color: #123354;
+	background-color: #291f20;
 }
 
 #custom-launcher {
 	margin: 4px 1px 4px 5px;
 	padding: 0 6px;
-	background-color: #163d63;
+	background-color: #513d3d;
 	border-radius: 10px;
 	min-width: 15px;
 }
@@ -37,15 +37,15 @@ tooltip {
 }
 
 #workspaces button:hover {
-	border: 1px solid #139cdb;
+	border: 1px solid #614847;
 }
 
 #workspaces button.active {
-	border: 1px solid #139cdb;
+	border: 1px solid #614847;
 }
 
 #workspaces button.empty {
-	background-color: #9fcfff;
+	background-color: #4a393a;
 	border-radius: 0px;
 }
 
@@ -56,11 +56,11 @@ tooltip {
 #tray {
 	margin: 3px 2px;
 	border-radius: 12px;
-	background-color: #139cdb;
+	background-color: #614847;
 }
 
 #tray menu {
-	background-color: #123354;
+	background-color: #291f20;
 }
 
 #tray * {
@@ -88,7 +88,7 @@ tooltip {
 #custom-power {
 	margin: 4px 5px 4px 1px;
 	padding: 0 6px;
-	background-color: #163d63;
+	background-color: #513d3d;
 	border-radius: 10px;
 	min-width: 15px;
 }
