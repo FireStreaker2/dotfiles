@@ -18,7 +18,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     ttf-jetbrains-mono-nerd noto-fonts-emoji \
     polkit-gnome python-requests starship \
     swappy grim slurp pamixer brightnessctl gvfs \
-    bluez bluez-utils neofetch neovim swaync \
+    bluez bluez-utils fastfetch neovim swaync \
     xdg-desktop-portal-hyprland sddm blueman \
     nm-connection-editor wl-clipboard swaybg \
     swayosd-git network-manager-applet wofi-emoji \
