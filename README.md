@@ -1,6 +1,6 @@
 # Dotfiles
 
-The repository containing the dotfiles for my [Hyprland](https://hyprland.org/) daily driver, featuring a [Gawr Gura](https://youtube.com/@gawrgura) theme.
+The repository containing the dotfiles for my [Hyprland](https://hypr.land/) daily driver, featuring a [Gawr Gura](https://youtube.com/@gawrgura) theme.
 
 # Info
 
@@ -48,7 +48,50 @@ The screen resolution I use is 2240x1400, which means if you use a different one
 
 # Keybinds/Shortcuts
 
-For a list of all the keybinds, please refer to my [hyprland.conf](https://github.com/FireStreaker2/dotfiles/blob/main/hypr/hyprland.conf) file. For waybar shortcuts, check out my waybar [config](https://github.com/FireStreaker2/dotfiles/blob/main/waybar/config).
+To see all keybinds in-depth, along with their underlying logic, please refer to my [hyprland.lua](https://github.com/FireStreaker2/dotfiles/blob/main/hypr/hyprland.lua) file. For waybar shortcuts, check out my waybar [configuration](https://github.com/FireStreaker2/dotfiles/blob/main/waybar/config).
+
+| Keybind               | Action                              |
+| --------------------- | ----------------------------------- |
+| `SUPER + A`           | Open terminal (`kitty`)             |
+| `SUPER + S`           | Open application launcher (`wofi`)  |
+| `SUPER + W`           | Open file manager (`thunar`)        |
+| `SUPER + L`           | Lock screen (`hyprlock`)            |
+| `SUPER + M`           | Open logout menu (`wlogout`)        |
+| `SUPER + SHIFT + M`   | Exit Hyprland                       |
+| `SUPER + J`           | Toggle split direction              |
+| `SUPER + ESC`         | Close active window                 |
+| `SUPER + SHIFT + ESC` | Force kill active window            |
+| `SUPER + TAB`         | Toggle floating mode                |
+| `SUPER + SHIFT + S`   | Select area and take screenshot     |
+| `SUPER + F`           | Toggle fullscreen                   |
+| `Print`               | Take full-screen screenshot         |
+| `SUPER + ←`           | Focus window to the left            |
+| `SUPER + →`           | Focus window to the right           |
+| `SUPER + ↑`           | Focus window above                  |
+| `SUPER + ↓`           | Focus window below                  |
+| `SUPER + 1–9`         | Switch to workspace 1–9             |
+| `SUPER + 0`           | Switch to workspace 10              |
+| `SUPER + SHIFT + 1–9` | Move active window to workspace 1–9 |
+| `SUPER + SHIFT + 0`   | Move active window to workspace 10  |
+| `SUPER + Scroll Up`   | Switch to next workspace            |
+| `SUPER + Scroll Down` | Switch to previous workspace        |
+| `SUPER + Left Click`  | Drag active window                  |
+| `SUPER + Right Click` | Resize active window                |
+| `SUPER + SHIFT + ←`   | Resize window left                  |
+| `SUPER + SHIFT + →`   | Resize window right                 |
+| `SUPER + SHIFT + ↑`   | Resize window up                    |
+| `SUPER + SHIFT + ↓`   | Resize window down                  |
+| `SUPER + R`           | Switch to Dwindle layout            |
+| `SUPER + SHIFT + R`   | Switch to Master layout             |
+| `SUPER + '`           | Swap active window with master      |
+| `Volume Up`           | Increase volume                     |
+| `Volume Down`         | Decrease volume                     |
+| `Mute`                | Toggle audio mute                   |
+| `Play/Pause`          | Toggle media playback               |
+| `Brightness Up`       | Increase brightness by 10%          |
+| `Brightness Down`     | Decrease brightness by 10%          |
+| `SUPER + V`           | Open clipboard history              |
+| `SUPER + .`           | Open emoji picker                   |
 
 # Credits
 
